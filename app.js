@@ -75,7 +75,7 @@ d3.csv("final.csv", function (tableData) {
         var location = tableData[i];
         var coordinates = [location.lat, location.lng];
         var marker = L.marker(coordinates)
-            .bindPopup(location.Company_Name)
+            .bindPopup("<h4>" + location.Company_Name.substring(0,location.Company_Name.length-3) + "</h4> <hr> <h6>" + location.city_state + "</h6>")
             .addTo(myFeatureGroup);
 
         //console.log(coordinates);
@@ -124,7 +124,7 @@ d3.csv("final.csv", function (tableData) {
         var location = tableData[i].city_state;
         var salary = tableData[i].Salary_Estimate;
         var rating = tableData[i].Rating;
-        var company = tableData[i].Company_Name;
+        var company = tableData[i].Company_Name.substring(0,tableData[i].Company_Name.length - 3);
         var industry = tableData[i].Industry;
 
         arr.push(title);
@@ -152,16 +152,7 @@ var button = d3.select('#filter-btn');
 
 button.on("click", runenter);
 
-//marker.on("click", markerClick);
 
-function markerClick(e) {
-    alert(e.latlng);
-    /* var coord = e.latlng;
-    var lat = coord.lat;
-    var lng = coord.lng;
-    console.log("You clicked the map at latitude: " + lat + " and longitude: " + lng); */
-    //console.log(event.layer.coordinates);
-}
 
 
 function runenter() {
@@ -194,7 +185,7 @@ function runenter() {
         var location = filteredData[i].city_state;
         var salary = filteredData[i].Salary_Estimate;
         var rating = filteredData[i].Rating;
-        var company = filteredData[i].Company_Name;
+        var company = filteredData[i].Company_Name.substring(0, filteredData[i].Company_Name.length-3);
         var industry = filteredData[i].Industry;
 
         arr.push(title);
@@ -212,7 +203,6 @@ function runenter() {
             d3.event.preventDefault();
             var cell = row.append("td");
             cell.text(arr[j]);
-            //console.log(arr[j]);
         }
 
 
