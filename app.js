@@ -16,6 +16,8 @@ d3.csv("newcensus.csv", function (tableData) {
 
     var layout = {
         title: tableData[0].citystate + " City Growth",
+        xaxis: {title: "Year"},
+        yaxis: {title: "City Population"}
     };
 
     Plotly.newPlot("linegraph", data, layout);
@@ -24,7 +26,7 @@ d3.csv("newcensus.csv", function (tableData) {
 
 var myMap = L.map("map", {
     center: [39.8283, -98.5795],
-    zoom: 3
+    zoom: 4
 });
 
 
