@@ -48,11 +48,6 @@ var myFeatureGroup = L.featureGroup().addTo(myMap).on("click", function (ev) {
     })
 
 
-    //d3.csv("newcensus.csv", function(tableData){
-
-    //console.log(cData);
-    //var censusCoords = [selectedCity.lat, selectedCity.lng];
-    //console.log(censusCoords);
 
     var cityPop = [selectedCity.Pop2010, selectedCity.Pop2011, selectedCity.Pop2012, selectedCity.Pop2013, selectedCity.Pop2014, selectedCity.Pop2015,
     selectedCity.Pop2016, selectedCity.Pop2017, selectedCity.Pop2018, selectedCity.Pop2019]
@@ -66,6 +61,8 @@ var myFeatureGroup = L.featureGroup().addTo(myMap).on("click", function (ev) {
 
     var layout = {
         title: selectedCity.citystate + " City Growth",
+        xaxis: {title: "Year"},
+        yaxis: {title: "City Population"}
     };
 
     Plotly.newPlot("linegraph", data, layout);
