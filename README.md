@@ -6,4 +6,4 @@ In order to create this search engine we used csv files from 3 different data so
 
 To join the appropriate and fields get our data into a database we used python and Jupiter notebook to essentially clean our data and format it so loading the csv files into Postgres was possible. After doing additional cleaning and connecting in Postgres we used the database to join our files and create new tables so that actual querying in our final table would be possible.
 
-BoootStrap and Leaflet were used to help build visuals such as a table to filter on location for jobs as well as an interactive map linked to a line graph that allows users to review population growth for selected cities.  
+BootStrap and Leaflet were used to help build visuals such as a table to filter on location for jobs as well as an interactive map linked to a line graph that allows users to review population growth for selected cities.  
